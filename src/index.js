@@ -44,10 +44,12 @@ const addCard = (toy) => {
   name.innerText = toy.name
   let image = document.createElement("img")
   image.src = toy.image 
+  image.className = "toy-avatar"
   let totalLikes = document.createElement("p")
   totalLikes.innerText = toy.likes
   let likeButton = document.createElement("button")
   likeButton.innerText = "Like"
+  likeButton.className = "like-btn"
   card.append(name, image, totalLikes, likeButton)
   likeButton.addEventListener('click', () => {
     fetch(URL + "/" + toy.id, {method: 'PATCH', headers: { 'Content-Type': 'application/json' },body: JSON.stringify({likes: toy.likes + 1})})
