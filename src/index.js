@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     toy.likes = 0
     fetch(URL, {method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(toy)})
     .then(resp => resp.json())
-    .then(addToy(toy))
+    .then(addCard(toy))
   })
 });
 
